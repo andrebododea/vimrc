@@ -1,0 +1,82 @@
+" Installs the vim-plug plugin manager
+" MUST GO BEFORE THE  'call plug#begin' COMMAND THAT COMES NEXT!!!
+if empty(glob('~/.vim/autoload/plug.vim'))
+   silent !curl --insecure -fLo ~/.vim/autoload/plug.vim --create-dirs
+       \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" Specify a directory for plugins
+call plug#begin('~/.vim/plugged')
+
+"""""""""""""""""""""""""""""
+" ALL PLUGINS GO BELOW HERE "
+"""""""""""""""""""""""""""""
+
+" Do :so % to refresh the .vimrc and then
+" :PlugInstall to install plugins
+" :PlugUpdate to install or update plugins
+" :PlugClean to remove unused plugins
+" :PlugUpgrade to upgrade vim-plug itself
+
+" Ultisnips - fills in class definitions etc
+"Plug 'SirVer/ultisnips'
+" Snippets are separated from the engine. Add this if you want them:
+"Plug 'honza/vim-snippets'
+"
+" Trigger configuration. Do not use <tab> if you use a completion engine
+"let g:UltiSnipsExpandTrigger="<S-Tab>"
+"let g:UltiSnipsJumpForwardTrigger="<c-b>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" VimCompletesMe, a super simple completion plugin for Vim
+" just hit Tab to autocomplete
+Plug 'ajh17/VimCompletesMe'
+
+" a.vim - Allows for switching between companion source files (.h and .cpp for example)
+" :A switches to the header file corresponding to the current file being
+" edited (or vise versa)
+" :AT new tab and switches
+Plug 'vim-scripts/a.vim'
+
+" ctrlp.vim - fuzzy file finder (e.g. type a file name without having to go back to the CL and grep)
+Plug 'ctrlpvim/ctrlp.vim'
+let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['<c-t>'],
+    \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
+    \ }
+
+" ctags - download ctags (apt-get install exuberant-ctags) and then navigate to the root dir of the project
+" next run 'ctags -R *' 
+" Put cursor over a particular word and do Ctrl-] to jump to the tag underneath the cursor
+
+" Gutentags, which manages ctag files
+Plug 'ludovicchabant/vim-gutentags'
+
+
+""""""""""""""""""""""""""""""
+" ALL PLUGINS GO ABOVE HERE  "
+""""""""""""""""""""""""""""""
+
+" Initialize vim-plug plugin system
+call plug#end()
+
+
+
+
+" Auto indent
+filetype plugin indent on
+
+" show existing tab with 3 spaces width
+set tabstop=3
+   
+" when indenting with '>', use 3 spaces width
+set shiftwidth=3
+
+" Insert space characters whenever the tab key is pressed
+set expandtab
+
+" Incremental search, when using the search command / it moves the highlight
+" as you add characters
+set incsearch
+
