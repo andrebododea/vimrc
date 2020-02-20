@@ -16,7 +16,7 @@ Actual plugins used are:
    
 3. ctrlp.vim 
    - Description: fuzzy file finder (e.g. type a file name without having to go back to the CL and grep)
-   - Usage:  custom mapping in this command lets you type `e` to open the selected entry in a new tab, and then `t` to ??
+   - Usage: Hit `Ctrl-p` to open up the search window. There is some custom key mapping in this command lets you type `e` to open the selected entry in a new tab, and then `t` to ??
    
 4. ctags
    - Description: Allows you to search function/variable definitions in the entire code project
