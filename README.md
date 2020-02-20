@@ -21,4 +21,4 @@ Actual plugins used are:
 4. ctags
    - Description: Allows you to search function/variable definitions in the entire code project
    - Setup: Download ctags (`apt-get install exuberant-ctags`) and then navigate to the root dir of the project and run `ctags -R *`
-   - Usage: Put cursor over a particular word and do `Ctrl-]` to jump to the tag underneath the cursor
+   - Usage: Put cursor over a particular word and do `Ctrl-]` to jump to the tag underneath the cursor. You can keep going down the tree, and then use `Ctrl-t` to climb back up the tree.
